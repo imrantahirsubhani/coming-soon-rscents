@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RScents — Coming Soon</title>
+    <meta name="description" content="RScents — luxury fragrances. Our website is currently under construction. Coming soon.">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background: #060504; /* matches the video's dark background */
+            overflow: hidden;
+            cursor: default;
+        }
+        .stage {
+            position: fixed;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(ellipse 70% 70% at 60% 55%, #1c160f 0%, #060504 70%);
+        }
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;          /* fills wide screens edge to edge */
+            animation: fadein 1.5s ease forwards;
+        }
+        /* On portrait screens (phones) show the whole video so the text isn't cropped */
+        @media (orientation: portrait) {
+            video { object-fit: contain; }
+        }
+        @keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+
+        /* Text for search engines and screen readers (the video already shows it visually) */
+        .sr-only {
+            position: absolute;
+            width: 1px; height: 1px;
+            overflow: hidden;
+            clip: rect(0 0 0 0);
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <main class="stage">
+        <h1 class="sr-only">RScents — Coming Soon</h1>
+        <p class="sr-only">Our website is currently under construction.</p>
+
+        <!-- Keep RScents_Coming_Soon.mp4 in the same folder as this file -->
+        <video autoplay muted loop playsinline preload="auto" aria-label="RScents coming soon">
+            <source src="RScents_Coming_Soon.mp4" type="video/mp4">
+            Your browser does not support video. RScents is coming soon.
+        </video>
+    </main>
+</body>
+</html>
